@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Coders Corner</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- link jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- link app.js -->
+    <script src="assets/javascript/app.js" type="text/javascript"></script>
+    <!-- link firebase -->
+    <script src=“https://www.gstatic.com/firebasejs/5.0.1/firebase.js“></script>
+    <!-- link style.css -->
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <nav class="navbar navbar-dark bg-white">
+            Coders Corner Logo
+        </nav>
+    </nav> 
+    <!-- this is a header  -->
+    <div class="container-fluid p-0">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+            <h1 class="display-4">Fluid jumbotron</h1>
+            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            </div>
+        </div>
+    <!-- one big row holding three columns -->
+        <div class="container">
+            <div class="row">
+            <div class="col-sm-3">
+                    <div id="card1" class="card border-secondary mb-3" style="max-width: 18rem;">
+                        <div class="card-body text-secondary">
+                            <h5 class="card-title">Status</h5>
+                            <p id="status" class="card-text border border-primary rounded mx-auto">status</p>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-sm-6">
+                    <div id="card2" class="card border-secondary mb-3" style="width:100%;">
+                        <div id="card-body2" class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <div class="input-group input-group-sm mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Name:</span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                            </div>
+                            <div>
+                                <a href="#" id="studentBtn" class="button btn-sm btn-warning">I am a Student</a>
+                                <a href="#" id="mentorBtn" class="button btn-sm btn-warning">I am a Mentor</a>
+                            </div>
+                            <div class="input-group input-group-sm mb-2 mt-2">
+                               
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Tags:</span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                            </div>
+                            <textarea class="form-control" id="exampleFormControlTextarea1"  rows="3"></textarea>
+                            <a href="#" class="btn btn-danger mt-1">Go</a>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-sm-3">
+                    <div id="card3" class="card border-secondary mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Header</div>
+                        <div class="card-body text-secondary">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
