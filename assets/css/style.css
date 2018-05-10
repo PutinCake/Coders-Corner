@@ -108,3 +108,12 @@ h1.ml8 {
   .ml1 .line1 { top: 0; }
   .ml1 .line2 { bottom: 0; }
   /* end line effect  */
+
+ .ml8 .circle {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+  }
