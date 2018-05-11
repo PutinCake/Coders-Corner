@@ -199,10 +199,10 @@ anime({
   loop: true
 });
 //end animation circle
-// Wrap every letter in a span
-$('.ml1 .letters').each(function(){
-    $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
-  });
+// // Wrap every letter in a span
+// $('.ml1 .letters').each(function(){
+//     $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+//   });
   
   anime.timeline({loop: true})
     .add({

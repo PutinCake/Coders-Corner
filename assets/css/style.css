@@ -1,5 +1,49 @@
+.container-fluid{
+  /* background-image: url(../images/background.jpg); */
+  background-color: #fffef6;
+  height: 100%;
+}
+
+.navbar-brand{
+  height: 100%;
+  width: 30%;
+}
+
+#logo{
+  color: rgb(250, 184, 61);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.jumbotron{
+  position: relative;
+  height: 400px;
+  padding-top: 3%;
+  background: url("../images/jumbocorped.jpg");
+  background-size: cover;
+}
+
 #card2{
     width:100%;
+}
+
+#card3{
+  height: 90%;
+  overflow: auto;
+}
+
+#card3body{
+  height: 90%;
+}
+
+.shadow-nohover{
+
+}
+
+iframe{
+  border: 1px solid;
+  margin-bottom: 20%;
 }
 
 #status{
@@ -7,13 +51,29 @@
     width: 100%;
 }
 
+.jumbotron{
+  position: relative;
+  height: 400px;
+  padding-top: 3%;
+  background: url("../images/jumbocorped.jpg");
+  background-size: cover;
+}
+
 /* animation circle */
 h1.ml8 {
+    position: absolute;
     font-weight: 900;
     font-size: 4.5em;
     color: #fff;
-    width: 3em;
-    height: 3em;
+    width: 100%;
+    height: 1em;
+    margin: 0 auto;
+    left: -1%;
+    bottom: 8%;
+  }
+
+  h1{
+    margin-top: 100px;
   }
   
   .ml8 .letters-container {
@@ -80,6 +140,7 @@ h1.ml8 {
   .ml1 {
     font-weight: 900;
     font-size: 3.5em;
+    margin-top:0px;
   }
   
   .ml1 .letter {
@@ -93,6 +154,8 @@ h1.ml8 {
     padding-top: 0.1em;
     padding-right: 0.05em;
     padding-bottom: 0.15em;
+    text-align: center;
+    color: rgb(245, 243, 243);
   }
   
   .ml1 .line {
@@ -108,3 +171,4 @@ h1.ml8 {
   .ml1 .line1 { top: 0; }
   .ml1 .line2 { bottom: 0; }
   /* end line effect  */
+

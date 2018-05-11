@@ -20,8 +20,8 @@
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
-        <nav class="navbar navbar-dark bg-white">
-            Coders Corner Logo
+        <nav class="navbar navbar-dark p-0">
+            <p id="logo">Coders Corner</p>
         </nav>
     </nav> 
     <!-- this is a header  -->
@@ -49,18 +49,19 @@
     <!-- one big row holding three columns -->
         <div class="container">
             <div class="row">
-            <div class="col-sm-3">
-                    <div id="card1" class="card border-secondary mb-3" style="max-width: 18rem;">
-                        <div class="card-body text-secondary">
-                            <h5 class="card-title">Status</h5>
-                            <p id="status" class="card-text border border-primary rounded mx-auto">status</p>
-                        </div>
+            <div class="col-sm-4">
+                <div id="card1" class="card shadow-nohover border-secondary mb-3" style="max-width: 18rem;">
+                    <div class="card-body text-secondary">
+                        <h5 class="card-title">Status</h5>
+                        <p id="status" class="card-text border border-primary rounded mx-auto">status</p>
                     </div>
+                </div>
+                <iframe src="http://deadsimplechat.com/+aUoQn" frameborder="0" width="100%" height="400px"></iframe>
             </div>
-            <div class="col-sm-7">
+            <div class="col-sm-5">
                     <div id="card2" class="card border-secondary mb-3" style="width:100%;">
                         <div id="card-body2" class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
+                            <h5 class="card-title">Login</h5>
                             <div class="input-group input-group-sm mb-2">
                                 <div class="input-group-prepend">
                                     <span id="nameInput" class="input-group-text" id="inputGroup-sizing-sm">Name:</span>
@@ -71,7 +72,7 @@
                                 <button href="#" id="studentBtn" class="button btn-sm btn-warning">I am a Student</button>
                                 <button href="#" id="mentorBtn" class="button btn-sm btn-warning">I am a Mentor</button>
                             </div>
-                            <div class="input-group input-group-sm mb-2 mt-2">
+                            <div class="input-group shadow-nohover input-group-sm mb-2 mt-2">
                                
                                 <div class="input-group-prepend">
                                     <span id="tagInput" class="input-group-text" id="inputGroup-sizing-sm">Tags:</span>
@@ -85,11 +86,11 @@
                     </div>
             </div>
             <div class="col-sm-3">
-                    <div id="card3" class="card border-secondary mb-4" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body text-secondary">
-                            <h5 class="card-title"></h5>
-                            <p class="card-text"></p>
+                    <div id="card3" class="card shadow-nohover border-secondary mb-4" style="max-width: 18rem;">
+                        <div class="card-header">Users Online</div>
+                        <div id="card3body" class="card-body text-secondary">
+                            <h5 class="card-title">Users Online</h5>
+                            <div class="card-text usersOnline"></div>
                         </div>
                     </div>
             </div>
