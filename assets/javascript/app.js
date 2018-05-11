@@ -64,7 +64,7 @@ $("#goBtn").on("click", function(event){
 
     var stofQuery = "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&site=stackoverflow&tagged="
     + tags + "&intitle=" + q;
-    var mdnQuery = "https://developer.mozilla.org/en-US/search.json?locale=en-US&q=" + q + " " + tags; //ajax query url's
+    var mdnQuery = "https://developer.mozilla.org/en-US/search.json?locale=en-US&q=" + q + "%2B" + tags; //ajax query url's
 
     var newUser = {
       name: name,
@@ -104,7 +104,7 @@ $("#goBtn").on("click", function(event){
       })
 
       $.ajax({
-          url: mdnQuery,
+          url: 'https://cors-anywhere.herokuapp.com/' + mdnQuery,
           method: "GET"
       }).then(function(response){
           for (var i = 0; i < 5; i++) {
@@ -166,11 +166,11 @@ connectionsRef.on("value", function(snap){
 // Creating firebase event for adding users to the database
 database.ref().on("child_added", function(childSnapshot, prevChildKey) {
     // Storing everything into a variable
-    var studentName = childSnapshot.val().name;
-    var role = childSnapshot.val().role;
-    var userTag = childSnapshot.val().tags;
-    var comment = childSnapshot.val().message;
-    $("#status").append(newUser);
+    // var studentName = childSnapshot.val().name;
+    // var role = childSnapshot.val().role;
+    // var userTag = childSnapshot.val().tags;
+    // var comment = childSnapshot.val().message;
+    // $("#status").append(newUser);
 });
 
 
