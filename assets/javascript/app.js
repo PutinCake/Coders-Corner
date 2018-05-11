@@ -10,14 +10,14 @@ var config = {
 firebase.initializeApp(config);
 var database = firebase.database();
 
-var role = 0;
+var role = "Check-in";
 
 $("#studentBtn").on("click", function(event){
     event.preventDefault();
 
     $(this).attr("class", "button btn-sm btn-success"); 
     $("#mentorBtn").attr("class", "button btn-sm btn-warning");
-    role = 1;
+    role = "Student";
 });
 
 $("#mentorBtn").on("click", function(event){
@@ -25,10 +25,12 @@ $("#mentorBtn").on("click", function(event){
 
     $(this).attr("class", "button btn-sm btn-success"); 
     $("#studentBtn").attr("class", "button btn-sm btn-warning");
-    role = -1;
+    role = "Mentor";
 });
 
 var userInfo;
+var idRef = database.ref("/users");
+var currentID;
 
 $("#goBtn").on("click", function(event){
     event.preventDefault();
@@ -40,25 +42,30 @@ $("#goBtn").on("click", function(event){
     var stofQuery = "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&site=stackoverflow&tagged="
     + tags + "&intitle=" + q;
     var mdnQuery = "https://developer.mozilla.org/en-US/search.json?locale=en-US&q=" + q + "%2B" + tags; //ajax query url's
-
+    
+    idRef.update({
+      id: currentID
+    })
+    
     var newUser = {
       name: name,
       role: role,
       tags: tags,
-      message: q
-  }
+      message: q,
+      id: currentID
+  }      
 
   // Uploads users data to the database
-    userInfo = connectionsRef.push(newUser);
+    userInfo = database.ref("/users").push(newUser);
     userInfo.onDisconnect().remove();
 
     if (name == ""){ //if name is blank display error
         $("#card-body2").append("<div style='background-color: red; color:white;'>Please enter Name</div>")
     }
-    else if (parseInt(role) == 0){ //if role isn't selected display error
+    else if (role == "Check-in"){ //if role isn't selected display error
         $("#card-body2").append("<div style='background-color: red; color:white;'>Please select Student/Mentor</div>")
     }
-    else if (role == 1){ //Change main div to fit student
+    else if (role == "Student"){ //Change main div to fit student
         $("#card-body2").empty();
         $("#card-body2").append("<h5 class='card-title'>Possible Solutions</h5>");
         $.ajax({
@@ -70,10 +77,10 @@ $("#goBtn").on("click", function(event){
               var docRating = "Rating: " + response.items[i].score;
               var articleURL = "<a href='" + response.items[i].link + "'>"
                 + response.items[i].link + "<a>"; 
-                var newDiv = $("<div>");
-                newDiv.append("<div>" + docTitle + "</div>");
-                newDiv.append("<div>" + docRating + "</div>");
-                newDiv.append("<div>" + articleURL + "</div></div>");
+                var newDiv = $("<br><div class='card-text border border-dark rounded mx-auto'>");
+                newDiv.append("<div id='articles'>" + docTitle + "</div>");
+                newDiv.append("<div id='articles'>" + docRating + "</div>");
+                newDiv.append("<div id='articles'>" + articleURL + "</div></div>");
                 $("#card-body2").append(newDiv);
           }
       })
@@ -87,10 +94,10 @@ $("#goBtn").on("click", function(event){
               var docExcerpt = "'" + response.documents[i].excerpt.substr(0, 150) + "...'";
               var articleURL = "<a href='" + response.documents[i].url + "'>"
                 + response.documents[i].url + "<a>"; 
-                var newDiv = $("<div>");
-                newDiv.append("<div>" + docTitle + "</div>");
-                newDiv.append("<div>" + docExcerpt + "</div>");
-                newDiv.append("<div>" + articleURL + "</div></div>");
+                var newDiv = $("<br><div id='articles' class='card-text border border-dark rounded mx-auto'>");
+                newDiv.append("<div id='articles'>" + docTitle + "</div>");
+                newDiv.append("<div id='articles'>" + docExcerpt + "</div>");
+                newDiv.append("<div id='articles'>" + articleURL + "</div></div>");
                 $("#card-body2").append(newDiv);
           }
       })
@@ -98,14 +105,16 @@ $("#goBtn").on("click", function(event){
     }  
     else { //Change main div to fit mentor
         $("#card-body2").empty();
+        console.log("Mentored");
     }
+
+    $("#status").html("<h3>" + name + "</h3><h4>" + role + "</h4>");
 
 })
 
 // ConnectionsRef refrences a specific location in our database.
 // All of our connections will be stored in this directory.
 var connectionsRef = database.ref("/connections");
-
 // .info/connected is a special location provided by firebase that is updated
 // every time the client's connection state changes.
 var connectedRef = database.ref(".info/connected");
@@ -133,10 +142,20 @@ connectionsRef.on("value", function(snap){
 
     // Display the users count in the html.
     // The number of online users in the number of children in the connections list.
-    $("#status").text(snap.numChildren());
-    console.log(snap.numChildren);
 
 });
+
+idRef.on("value", function(snap){
+    currentID = snap.val().id + 1;    
+})
+
+idRef.on("child_added", function(snap){
+  if(snap.val().name){
+    var newOnline = $("<div>");
+      newOnline.append("<br><h4>" + snap.val().name + "</h4><h5>" + snap.val().role + "</h5></div>");
+      $("#card3body").append(newOnline);
+    }
+})
 
 // Creating firebase event for adding users to the database
 database.ref().on("child_added", function(childSnapshot, prevChildKey) {
