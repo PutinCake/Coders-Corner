@@ -8,8 +8,13 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- link firebase
-    <script src=“https://www.gstatic.com/firebasejs/5.0.1/firebase.js“></script> -->
+    <!-- link jQuery -->
+    
+    <!-- link app.js -->
+    
+    <!-- link firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
+
     <!-- link style.css -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 </head>
@@ -59,7 +64,7 @@
                             <h5 class="card-title">Login</h5>
                             <div class="input-group input-group-sm mb-2">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-sm">Name:</span>
+                                    <span id="nameInput" class="input-group-text" id="inputGroup-sizing-sm">Name:</span>
                                 </div>
                                 <input id="name" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
                             </div>
@@ -70,12 +75,13 @@
                             <div class="input-group shadow-nohover input-group-sm mb-2 mt-2">
                                
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-sm">Tags:</span>
+                                    <span id="tagInput" class="input-group-text" id="inputGroup-sizing-sm">Tags:</span>
                                 </div>
                                 <input id="tags" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
                             </div>
                             <textarea class="form-control" id="textarea"  rows="3"></textarea>
                             <a id="goBtn" class="btn btn-danger mt-1">Go</a>
+
                         </div>
                     </div>
             </div>
@@ -91,13 +97,13 @@
             </div>
         </div>
     </div>
-   
-    
-    
+
     <!-- link jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <!-- link app.js and anime.min.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+
     <script src="assets/javascript/app.js" type="text/javascript"></script>
 </body>
 </html>
