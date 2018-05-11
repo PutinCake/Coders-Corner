@@ -12,8 +12,13 @@
 #logo{
   color: rgb(250, 184, 61);
   font-family: 'Courier New', Courier, monospace;
-  font-size: 3em;
+  font-size: 7vh;
   font-weight: bold;
+}
+
+#beelogo{
+  height: 7vh;
+  width:7vh
 }
 
 .jumbotron{
@@ -25,38 +30,53 @@
 }
 
 #card2{
-    width:100%;
+  padding-top: 10%;
+  width:100%;
+  height: 100%;
+  z-index: 0;
 }
 
 #card3{
   height: 90%;
-  overflow: auto;
+  width: 100%;
+  /* overflow: auto; */
 }
 
 #card3body{
-  height: 90%;
+  height: 100%;
 }
 
-.shadow-nohover{
+.shadow-nohover {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.shadow {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.shadow:hover {
+  box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
 }
 
 iframe{
   border: 1px solid;
+  margin: 0 auto;
+}
+
+#chatroom{
+  /* position: fixed; */
+  /* left:5px; */
+  width: 800px;
+  height: 100%;
   margin-bottom: 20%;
+  z-index: 99;
 }
 
 #status{
     height: 100px;
     width: 100%;
-}
-
-.jumbotron{
-  position: relative;
-  height: 400px;
-  padding-top: 3%;
-  background: url("../images/jumbocorped.jpg");
-  background-size: cover;
 }
 
 /* animation circle */
@@ -139,7 +159,7 @@ h1.ml8 {
   /* line display efect */
   .ml1 {
     font-weight: 900;
-    font-size: 3.5em;
+    font-size: 8vh;
     margin-top:0px;
   }
   
