@@ -1,3 +1,4 @@
+
 // var stofQuery = "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&site=stackoverflow&tagged="
 //     + tags + "&intitle=" + q;
 // var mdnQuery = "https://developer.mozilla.org/en-US/search.json?locale=en-US&q=" + q + " " + tags; //ajax query url's
@@ -167,4 +168,93 @@ $('.ml1 .letters').each(function(){
       delay: 1000
     });
 //end line effect
+
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyCQmBSNHXpcE_tizj6gp7rDoNxqXyOmgzU",
+    authDomain: "coders-corner-1525974035968.firebaseapp.com",
+    databaseURL: "https://coders-corner-1525974035968.firebaseio.com",
+    projectId: "coders-corner-1525974035968",
+    storageBucket: "",
+    messagingSenderId: "135660697800"
+  };
+  firebase.initializeApp(config);
+  var database = firebase.database();
+
+
+// ConnectionsRef refrences a specific location in our database.
+// All of our connections will be stored in this directory.
+var connectionsRef = database.ref("/connections");
+
+// .info/connected is a special location provided by firebase that is updated
+// every time the client's connection state changes.
+var connectedRef = database.ref(".info/connected");
+
+// When the client's connection state changes.
+connectedRef.on("value", function(snap){
+
+    // if they are connected..
+    if (snap.val()) {
+
+        // Add user to the connections list.
+        var con = connectionsRef.push(true);
+
+        // Remove user from the connection list when they disconnect.
+        con.onDisconnect().remove();
+    }
+});
+
+// When first loaded or when the connections list changes.
+connectionsRef.on("value", function(snap){
+
+    // Display the users count in the html.
+    // The number of online users in the number of children in the connections list.
+    $("#status").text(snap.numChildren());
+    console.log(snap.numChildren);
+
+});
+
+
+// button for adding users
+$("#submitBtn").on("click", function(event){
+    event.preventDefault();
+     
+    // Grabs user input
+    var studentName = $("#nameInput").val().trim();
+    var isStudent = $("#studentBtn").val().trim();
+    var isMentor = $("#mentorBtn").val().trim();
+    var userTag = $("#tagInput").val().trim();
+    var comment = $("#textInput").val().trim();
+
+    // Creates local "temporary" object for holding users data.
+    var newUser = {
+        name: studentName,
+        student: isStudent,
+        mentor: isMentor,
+        tags: userTag,
+        message: comment
+    }
+
+    // Uploads users data to the database
+    database.ref().push(newUser);
+
+    // Clear all of the text-boxes 
+    $("#nameInput").val("");
+    $("#studentBtn").val("");
+    $("#mentorBtn").val("");
+    $("#tagInput").val("");
+    $("#textInput").val("");
+});
+
+// Creating firebase event for adding users to the database
+database.ref().on("child_added", function(childSnapshot, prevChildKey) {
+    // Storing everything into a variable
+    var studentName = childSnapshot.val().name;
+    var isStudent = childSnapshot.val().student;
+    var isMentor = childSnapshot.val().mentor;
+    var userTag = childSnapshot.val().tags;
+    var comment = childSnapshot.val().message;
+    $("#status").append(newUser);
+});
+
 
