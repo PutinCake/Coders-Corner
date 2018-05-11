@@ -29,6 +29,10 @@
   background-size: cover;
 }
 
+#card1{
+  height: 100%;
+}
+
 #card2{
   padding-top: 10%;
   width:100%;
@@ -37,13 +41,14 @@
 }
 
 #card3{
-  height: 90%;
+  height: 100%;
   width: 100%;
-  /* overflow: auto; */
+  overflow: auto;
 }
 
 #card3body{
   height: 100%;
+  width: 800px;
 }
 
 .shadow-nohover {
