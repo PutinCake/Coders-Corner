@@ -10,31 +10,6 @@ var config = {
 firebase.initializeApp(config);
 var database = firebase.database();
 
-// $.ajax({
-//     url: stofQuery,
-//     method: "GET"
-// }).then(function(response){
-//     for (var i = 0; i < 5; i++) { //create variables for necessary items
-//         var docTitle = response.items[i].title;
-//         var docRating = "Rating: " + response.items[i].score;
-//         var articleURL = "<a href='" + response.items[i].link + "'>"
-//           + response.items[i].link + "<a>"; 
-//           //need to append to page
-//     }
-// })
-
-// $.ajax({
-//     url: mdnQuery,
-//     method: "GET"
-// }).then(function(response){
-//     for (var i = 0; i < 5; i++) {
-//         var docTitle = response.documents[i].title;
-//         var docExcerpt = "'" + response.documents[i].excerpt.substr(0, 150) + "...'";
-//         var articleURL = "<a href='" + response.documents[i].url + "'>"
-//           + response.documents[i].url + "<a>"; 
-//           //need to append to page
-//     }
-// })
 var role = 0;
 
 $("#studentBtn").on("click", function(event){
