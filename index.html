@@ -42,10 +42,15 @@
                 </h1>
             </div>
         </div>
-    <!-- one big row holding three columns -->
         <div class="container">
+            <!-- chatroom  -->
+            <!-- remove class d-none to show chat room -->
+            <div id="chatroom" class="row d-none">
+                <iframe src="http://deadsimplechat.com/CodersCornerstayout" frameborder="0" width="800px" height="450px"></iframe>
+            </div>
+            <!-- one big row holding three columns -->
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-md-3">
                     <div id="card1" class="card shadow shadow-nohover border-secondary mb-3" style="max-width: 18rem;">
                         <div class="card-body text-secondary">
                             <h5 class="card-title">Status</h5>
@@ -53,19 +58,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-8">
-                    <div id="card3" class="card-fluid shadow shadow-nohover border-secondary mb-4" style="max-width: 18rem;">
-                        <div class="card-header">Users Online</div>
-                        <div id="card3body" class="card-body text-secondary">
-                            <h5 class="card-title">Users Online</h5>
-                            <div class="card-text usersOnline"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div id="card2" class="card shadow border-secondary mb-3" style="width:100%;">
                         <div id="card-body2" class="card-body">
                             <h5 class="card-title">Login</h5>
@@ -76,8 +69,8 @@
                                 <input id="name" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
                             </div>
                             <div>
-                                <button href="#" id="studentBtn" class="button btn-sm btn-warning">I am a Student</button>
-                                <button href="#" id="mentorBtn" class="button btn-sm btn-warning">I am a Mentor</button>
+                                <button id="studentBtn" class="button btn-sm btn-warning">I am a Student</button>
+                                <button id="mentorBtn" class="button btn-sm btn-warning">I am a Mentor</button>
                             </div>
                             <div class="input-group shadow-nohover input-group-sm mb-2 mt-2">
                                 <div class="input-group-prepend">
@@ -89,12 +82,16 @@
                             <a id="goBtn" class="btn btn-danger mt-1">Go</a>
                         </div>
                     </div>
-                </div>  
-                <div class="col-md-8">
-                    <div id="chatRoom" class="shadow">
-                        <iframe src="http://deadsimplechat.com/CodersCornerstayout" frameborder="0" width="800px" height="500px"></iframe>
+                </div>
+                <div class="col-md-3">
+                    <div id="card3" class="card-fluid shadow shadow-nohover border-secondary mb-4" style="max-width: 18rem;">
+                        <div class="card-header">Users Online</div>
+                        <div id="card3body" class="card-body text-secondary">
+                            <h5 class="card-title">Users Online</h5>
+                            <div class="card-text usersOnline"></div>
+                        </div>
                     </div>
-                </div>      
+                </div>
             </div>
         </div>
         <footer class="fixed-bottom"> good job!</footer>
