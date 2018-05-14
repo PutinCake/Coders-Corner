@@ -109,7 +109,14 @@ $("#goBtn").on("click", function(event){
     }
 
     $("#status").html("<h3>" + name + "</h3><h4>" + role + "</h4>");
-
+    // fill in left part of page
+    $("#gif").empty();
+    var gif1=$("<img width=100% class='mb-2'>").attr("src","https://media.giphy.com/media/13f7pejozPXuta/giphy.gif");
+    var gif2=$("<img width=100% class='mb-2'>").attr("src","https://media.giphy.com/media/v9fIPO9pbpdjG/giphy.gif");
+    var gif3=$("<img width=100% class='mb-2'>").attr("src","https://media.giphy.com/media/gJZS10CemXPRm/giphy.gif");
+    $("#gif").append(gif1);
+    $("#gif").append(gif2);
+    $("#gif").append(gif3);
 })
 
 // ConnectionsRef refrences a specific location in our database.

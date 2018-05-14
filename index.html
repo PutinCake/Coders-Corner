@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Coders Corner</title>
+    <a href="index.html"><title>Coders Corner</title></a>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,7 +10,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- link firebase -->
     <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
-
+    <!--google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Skranji" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <!--link font awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <!-- link style.css -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 </head>
@@ -19,6 +24,12 @@
         <nav class="navbar navbar-dark p-0">
             <p id="logo">Coders Corner <img id="beelogo" src="assets/images/beelogo.png"></p>
         </nav>
+        <div class="header-right header-icons">
+            <a href="#"><i class="fab fa-facebook-square"></i>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
     </nav> 
     <!-- this is a header  -->
     <div class="container-fluid p-0">
@@ -51,20 +62,22 @@
             <!-- one big row holding three columns -->
             <div class="row">
                 <div class="col-md-3">
-                    <div id="card1" class="card shadow shadow-nohover border-secondary mb-3" style="max-width: 18rem;">
+                    <div id="card1" class="card shadow shadow-nohover mb-3" style="max-width: 18rem;">
                         <div class="card-body text-secondary">
-                            <h5 class="card-title">Status</h5>
-                            <h3 id="status" class="card-text border border-primary rounded mx-auto">status</h3>
+                            <h5 class="card-title">Your Status</h5>
+                            <h3 id="status" class="card-text border border-primary rounded mx-auto pl-2"></h3>
                         </div>
+                    </div>
+                    <div id="gif">
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div id="card2" class="card shadow border-secondary mb-3" style="width:100%;">
+                    <div id="card2" class="card shadow mb-3" style="width:100%;">
                         <div id="card-body2" class="card-body">
-                            <h5 class="card-title">Login</h5>
+                            <h5 class="card-title">Check In</h5>
                             <div class="input-group input-group-sm mb-2">
                                 <div class="input-group-prepend">
-                                    <span id="nameInput" class="input-group-text" id="inputGroup-sizing-sm">Name:</span>
+                                    <span id="nameInput" class="input-group-text" id="inputGroup-sizing-sm">User Name:</span>
                                 </div>
                                 <input id="name" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
                             </div>
@@ -76,33 +89,78 @@
                                 <div class="input-group-prepend">
                                     <span id="tagInput" class="input-group-text" id="inputGroup-sizing-sm">Tags:</span>
                                 </div>
-                                <input id="tags" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                <input id="tags" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="ex: javascript">
                             </div>
-                            <textarea class="form-control" id="textarea"  rows="3"></textarea>
+                            <textarea class="form-control" id="textarea"  rows="3" placeholder="Enter a topic you wanna search for"></textarea>
                             <a id="goBtn" class="btn btn-danger mt-1">Go</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div id="card3" class="card-fluid shadow shadow-nohover border-secondary mb-4" style="max-width: 18rem;">
-                        <div class="card-header">Users Online</div>
+                        <div class="card-header card-title">Users Online</div>
                         <div id="card3body" class="card-body text-secondary">
-                            <h5 class="card-title">Users Online</h5>
-                            <div class="card-text usersOnline"></div>
+                            <div class="card-text usersOnline font-size-sm"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <footer class="fixed-bottom"> good job!</footer>
+        <!--Footer-->
+        <footer class="footer-distributed">
+            <!--left part-->
+			<div class="footer-left">
+                <p id="logo-footer">Coders Corner <img id="beelogo-footer" src="assets/images/beelogo.png" ></p>
+				<p class="footer-links">
+					<a href="#">Home</a>
+					·
+					<a href="#">Blog</a>
+					·
+					<a href="#">Pricing</a>
+					·
+					<a href="#">About</a>
+					·
+					<a href="#">FAQ</a>
+					·
+					<a href="#">Contact</a>
+				</p>
+				<p class="footer-company-name">Company Name &copy; 2018</p>
+			</div>
+            <!--center part-->
+			<div class="footer-center">
+				<div>
+                    <i class="fas fa-map-marker"></i>
+					<p><span>3900 Adeline</span> Oakland, CA</p>
+				</div>
+				<div>
+                    <i class="fas fa-phone"></i>
+					<p>+1 (520) 301-7980</p>
+				</div>
+				<div>
+                    <i class="fas fa-envelope"></i>
+					<p><a href="mailto:support@company.com">support@company.com</a></p>
+				</div>
+			</div>
+            <!--right part-->
+			<div class="footer-right">
+				<p class="footer-company-about">
+					<span>About the Coders Corner</span>
+					Coders Corner is a web-based online learning community where knowledges meet and spark.
+				</p>
+				<div class="footer-icons">
+					<a href="#"><i class="fab fa-facebook-square"></i>
+					<a href="#"><i class="fab fa-twitter"></i></a>
+					<a href="#"><i class="fab fa-linkedin"></i></a>
+					<a href="#"><i class="fab fa-github"></i></a>
+				</div>
+			</div>
+		</footer>
     </div>
 
     <!-- link jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <!-- link app.js and anime.min.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-
-
     <script src="assets/javascript/app.js" type="text/javascript"></script>
 </body>
 </html>
