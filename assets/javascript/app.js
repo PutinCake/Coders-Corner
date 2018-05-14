@@ -67,6 +67,7 @@ $("#goBtn").on("click", function(event){
     }
     else if (role == "Student"){ //Change main div to fit student
         $("#card-body2").empty();
+        $("#card-body2").append("<button id='refresh' class='button btn-primary float-right'>New Question</button>");
         $("#card-body2").append("<h5 class='card-title'>Possible Solutions</h5>");
         $.ajax({
           url: stofQuery,
@@ -78,7 +79,7 @@ $("#goBtn").on("click", function(event){
               var articleURL = "<a href='" + response.items[i].link + "' target='_blank'>"
                 + response.items[i].link + "<a>"; 
                 var newDiv = $("<br><div class='card-text border border-dark rounded mx-auto'>");
-                newDiv.append("<div id='articles'>" + docTitle + "</div>");
+                newDiv.append("<div id='articles'><b>" + docTitle + "</b></div>");
                 newDiv.append("<div id='articles'>" + docRating + "</div>");
                 newDiv.append("<div id='articles'>" + articleURL + "</div></div>");
                 $("#card-body2").append(newDiv);
@@ -95,7 +96,7 @@ $("#goBtn").on("click", function(event){
               var articleURL = "<a href='" + response.documents[i].url + "' target='_blank'>"
                 + response.documents[i].url + "<a>"; 
                 var newDiv = $("<br><div id='articles' class='card-text border border-dark rounded mx-auto'>");
-                newDiv.append("<div id='articles'>" + docTitle + "</div>");
+                newDiv.append("<div id='articles'><b>" + docTitle + "</b></div>");
                 newDiv.append("<div id='articles'>" + docExcerpt + "</div>");
                 newDiv.append("<div id='articles'>" + articleURL + "</div></div>");
                 $("#card-body2").append(newDiv);
@@ -114,7 +115,7 @@ $("#goBtn").on("click", function(event){
 
           if(snap.val().role == "Student"){
             var newUserID = snap.val().id;
-            var newIssue = $("<br><div id='issues' class='card-text border border-dark rounded mx-auto'>");
+            var newIssue = $("<br><div id='user" + newUserID + "' class='card-text border border-dark rounded mx-auto'>");
               newIssue.append("<h4>" + snap.val().name + "</h4><h5>" + snap.val().tags + "</h5><h5>" 
                 + snap.val().message + "</h5>");
               newIssue.prepend("<button id='join" + newUserID + "' class='button btn-primary float-right joinButtons'"
@@ -127,7 +128,7 @@ $("#goBtn").on("click", function(event){
 
     }
 
-    $("#status").html("<h3>" + name + "</h3><h4>" + role + "</h4>");
+    $("#status").html("<h3><b>" + name + "</b></h3><h4>" + role + "</h4>");
     // fill in left part of page
     $("#gif").empty();
     var gif1=$("<img width=100% class='mb-2'>").attr("src","https://media.giphy.com/media/13f7pejozPXuta/giphy.gif");
@@ -144,6 +145,11 @@ $(Document).on("click", ".joinButtons", function(event){
   var chatLink = "http://deadsimplechat.com/CodersCorner" + $(this).val();
   $("iframe").attr("src", chatLink);
   $("#chatroom").removeClass("d-none");
+})
+
+$(Document).on("click", "#refresh", function(event){
+  event.preventDefault();
+  window.location.href = window.location.href;
 })
 // ConnectionsRef refrences a specific location in our database.
 // All of our connections will be stored in this directory.
@@ -171,12 +177,12 @@ connectedRef.on("value", function(snap){
 });
 
 // When first loaded or when the connections list changes.
-connectionsRef.on("value", function(snap){
+// connectionsRef.on("value", function(snap){
 
-    // Display the users count in the html.
-    // The number of online users in the number of children in the connections list.
+//     // Display the users count in the html.
+//     // The number of online users in the number of children in the connections list.
 
-});
+// });
 
 idRef.on("value", function(snap){
     currentID = snap.val().id + 1;    
@@ -185,21 +191,29 @@ idRef.on("value", function(snap){
 idRef.on("child_added", function(snap){
 
   if(snap.val().name){
-    var newOnline = $("<div>");
+    var newOnline = $("<div id='user" + snap.val().id + "'>");
       newOnline.append("<br><h4>" + snap.val().name + "</h4><h5>" + snap.val().role + "</h5></div>");
       $("#card3body").append(newOnline);
   }
 })
 
+idRef.on("child_removed", function(snap){
+
+  if(snap.val().name){
+    var removeID = $("#user" + snap.val().id);
+    removeID.remove();
+  }
+})
+
 // Creating firebase event for adding users to the database
-database.ref().on("child_added", function(childSnapshot, prevChildKey) {
-    // Storing everything into a variable
-    // var studentName = childSnapshot.val().name;
-    // var role = childSnapshot.val().role;
-    // var userTag = childSnapshot.val().tags;
-    // var comment = childSnapshot.val().message;
-    // $("#status").append(newUser);
-});
+// database.ref().on("child_added", function(childSnapshot, prevChildKey) {
+//     // Storing everything into a variable
+//     // var studentName = childSnapshot.val().name;
+//     // var role = childSnapshot.val().role;
+//     // var userTag = childSnapshot.val().tags;
+//     // var comment = childSnapshot.val().message;
+//     // $("#status").append(newUser);
+// });
 
 
 
