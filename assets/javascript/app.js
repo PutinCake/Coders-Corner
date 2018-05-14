@@ -123,9 +123,6 @@ $("#goBtn").on("click", function(event){
               $("#card-body2").append(newIssue);
           }
         })
-
-
-
     }
 
     $("#status").html("<h3><b>" + name + "</b></h3><h4>" + role + "</h4>");
@@ -139,7 +136,7 @@ $("#goBtn").on("click", function(event){
     $("#gif").append(gif3);
 
 })
-$(Document).on("click", ".joinButtons", function(event){
+$(document).on("click", ".joinButtons", function(event){
   event.preventDefault();
 
   var chatLink = "http://deadsimplechat.com/CodersCorner" + $(this).val();
@@ -147,7 +144,7 @@ $(Document).on("click", ".joinButtons", function(event){
   $("#chatroom").removeClass("d-none");
 })
 
-$(Document).on("click", "#refresh", function(event){
+$(document).on("click", "#refresh", function(event){
   event.preventDefault();
   window.location.href = window.location.href;
 })
