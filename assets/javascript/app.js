@@ -75,7 +75,7 @@ $("#goBtn").on("click", function(event){
           for (var i = 0; i < 5; i++) { //create variables for necessary items
               var docTitle = response.items[i].title;
               var docRating = "Rating: " + response.items[i].score;
-              var articleURL = "<a href='" + response.items[i].link + "'>"
+              var articleURL = "<a href='" + response.items[i].link + "' target='_blank'>"
                 + response.items[i].link + "<a>"; 
                 var newDiv = $("<br><div class='card-text border border-dark rounded mx-auto'>");
                 newDiv.append("<div id='articles'>" + docTitle + "</div>");
@@ -92,7 +92,7 @@ $("#goBtn").on("click", function(event){
           for (var i = 0; i < 5; i++) {
               var docTitle = response.documents[i].title;
               var docExcerpt = "'" + response.documents[i].excerpt.substr(0, 150) + "...'";
-              var articleURL = "<a href='" + response.documents[i].url + "'>"
+              var articleURL = "<a href='" + response.documents[i].url + "' target='_blank'>"
                 + response.documents[i].url + "<a>"; 
                 var newDiv = $("<br><div id='articles' class='card-text border border-dark rounded mx-auto'>");
                 newDiv.append("<div id='articles'>" + docTitle + "</div>");
@@ -102,10 +102,37 @@ $("#goBtn").on("click", function(event){
           }
       })
         
+      var chatLink = "http://deadsimplechat.com/CodersCorner" + currentID;
+      $("iframe").attr("src", chatLink);
+      $("#chatroom").removeClass("d-none");
     }  
     else { //Change main div to fit mentor
         $("#card-body2").empty();
-        console.log("Mentored");
+        $("#card-body2").append("<h5 class='card-title'>Student Problems</h5>");
+        
+        idRef.on("child_added", function(snap){
+
+          if(snap.val().role == "Student"){
+            var newUserID = snap.val().id;
+            var newIssue = $("<br><div id='issues' class='card-text border border-dark rounded mx-auto'>");
+              newIssue.append("<h4>" + snap.val().name + "</h4><h5>" + snap.val().tags + "</h5><h5>" 
+                + snap.val().message + "</h5>");
+              newIssue.prepend("<button id='join" + newUserID + "' class='button btn-primary float-right joinButtons'>"
+                + "Join Chat</button></div>");
+              $("#card-body2").append(newIssue);
+
+            $(Document).on("click", ".joinButtons", function(event){
+              event.preventDefault();
+
+              var chatLink = "http://deadsimplechat.com/CodersCorner" + newUserID;
+              $("iframe").attr("src", chatLink);
+              $("#chatroom").removeClass("d-none");
+            })
+          }
+        })
+
+
+
     }
 
     $("#status").html("<h3>" + name + "</h3><h4>" + role + "</h4>");
@@ -113,10 +140,11 @@ $("#goBtn").on("click", function(event){
     $("#gif").empty();
     var gif1=$("<img width=100% class='mb-2'>").attr("src","https://media.giphy.com/media/13f7pejozPXuta/giphy.gif");
     var gif2=$("<img width=100% class='mb-2'>").attr("src","https://media.giphy.com/media/v9fIPO9pbpdjG/giphy.gif");
-    var gif3=$("<img width=100% class='mb-2'>").attr("src","https://media.giphy.com/media/gJZS10CemXPRm/giphy.gif");
+    // var gif3=$("<img width=100% class='mb-2'>").attr("src","https://media.giphy.com/media/gJZS10CemXPRm/giphy.gif");
     $("#gif").append(gif1);
     $("#gif").append(gif2);
     $("#gif").append(gif3);
+
 })
 
 // ConnectionsRef refrences a specific location in our database.
@@ -157,11 +185,12 @@ idRef.on("value", function(snap){
 })
 
 idRef.on("child_added", function(snap){
+
   if(snap.val().name){
     var newOnline = $("<div>");
       newOnline.append("<br><h4>" + snap.val().name + "</h4><h5>" + snap.val().role + "</h5></div>");
       $("#card3body").append(newOnline);
-    }
+  }
 })
 
 // Creating firebase event for adding users to the database
