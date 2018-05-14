@@ -103,7 +103,7 @@ $("#goBtn").on("click", function(event){
           }
       })
         
-      var chatLink = "https://deadsimplechat.com/CodersCorner" + currentID;
+      var chatLink = "http://deadsimplechat.com/CodersCorner" + currentID;
       $("iframe").attr("src", chatLink);
       $("#chatroom").removeClass("d-none");
     }  
@@ -139,7 +139,7 @@ $("#goBtn").on("click", function(event){
 $(document).on("click", ".joinButtons", function(event){
   event.preventDefault();
 
-  var chatLink = "https://deadsimplechat.com/CodersCorner" + $(this).val();
+  var chatLink = "http://deadsimplechat.com/CodersCorner" + $(this).val();
   $("iframe").attr("src", chatLink);
   $("#chatroom").removeClass("d-none");
 })
