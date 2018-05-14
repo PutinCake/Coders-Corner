@@ -44,6 +44,8 @@
 .card-title{
   font-family: 'Rubik', sans-serif;
   font-weight: bolder;
+  font-size: 40px;
+  margin: 0 auto;
 }
 
 .btn{
@@ -127,7 +129,11 @@ iframe{
   height: 100px;
   width: 100%;
   color: rgb(58, 52, 52);
+  background-color: #f5e9ff;
 }
+
+
+
 
 /* animation circle */
 h1.ml8 {
@@ -399,3 +405,15 @@ h1.ml8 {
     background-color: #4f7b86;
     -webkit-border-radius: 4px;
 }
+
+/* medie */
+@media screen and (max-width: 1200px){
+  .card-title{
+    font-size:1.5rem;
+  }
+
+  .card-text{
+    font-size:1rem;
+  }
+}
+
