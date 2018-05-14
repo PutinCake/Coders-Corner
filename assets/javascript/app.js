@@ -115,7 +115,7 @@ $("#goBtn").on("click", function(event){
 
           if(snap.val().role == "Student"){
             var newUserID = snap.val().id;
-            var newIssue = $("<br><div id='user" + newUserID + "' class='card-text border border-dark rounded mx-auto'>");
+            var newIssue = $("<br><div id='prob" + newUserID + "' class='card-text border border-dark rounded mx-auto'>");
               newIssue.append("<h4>" + snap.val().name + "</h4><h5>" + snap.val().tags + "</h5><h5>" 
                 + snap.val().message + "</h5>");
               newIssue.prepend("<button id='join" + newUserID + "' class='button btn-primary float-right joinButtons'"
@@ -200,8 +200,8 @@ idRef.on("child_added", function(snap){
 idRef.on("child_removed", function(snap){
 
   if(snap.val().name){
-    var removeID = $("#user" + snap.val().id);
-    removeID.remove();
+    $("#prob" + snap.val().id).remove()
+    $("#user" + snap.val().id).remove();
   }
 })
 
