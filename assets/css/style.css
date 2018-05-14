@@ -37,6 +37,7 @@
   position: relative;
   height: 400px;
   padding-top: 3%;
+  margin-bottom: 2vh;
   background: url("../images/jumbocorped.jpg");
   background-size: cover;
 }
@@ -107,33 +108,37 @@
 }
 
 h4{
-  margin: .25rem 1.5rem;
+  margin: .25rem 1vw;
 }
 
 h5{
-  margin: .25rem 1.5rem;
+  margin: .25rem 1vw;
 }
 
 iframe{
   border: 1px solid;
 }
 
-#chatroom{
+/* #chatBtn{
+  position: fixed;
+  top: 0;
+  right: 0;
+} */
+
+/* #chatroom{
   padding-left: 4vw;
   width: 100%;
   margin-bottom: 3%;
   z-index: 99;
-}
+} */
 
 #status{
   height: 100px;
   width: 100%;
   color: rgb(58, 52, 52);
   background-color: #f5e9ff;
+  overflow: auto;
 }
-
-
-
 
 /* animation circle */
 h1.ml8 {
@@ -412,8 +417,14 @@ h1.ml8 {
     font-size:1.5rem;
   }
 
-  .card-text{
-    font-size:1rem;
+  .card-body{
+    padding: 25px 3px;
   }
+}
+
+@media screen and (max-width: 375px){
+    .mb-2{
+      height:3px;
+    }
 }
 
