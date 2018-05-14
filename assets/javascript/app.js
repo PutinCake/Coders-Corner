@@ -117,17 +117,9 @@ $("#goBtn").on("click", function(event){
             var newIssue = $("<br><div id='issues' class='card-text border border-dark rounded mx-auto'>");
               newIssue.append("<h4>" + snap.val().name + "</h4><h5>" + snap.val().tags + "</h5><h5>" 
                 + snap.val().message + "</h5>");
-              newIssue.prepend("<button id='join" + newUserID + "' class='button btn-primary float-right joinButtons'>"
-                + "Join Chat</button></div>");
+              newIssue.prepend("<button id='join" + newUserID + "' class='button btn-primary float-right joinButtons'"
+                + " value='" + newUserID + "'>Join Chat</button></div>");
               $("#card-body2").append(newIssue);
-
-            $(Document).on("click", ".joinButtons", function(event){
-              event.preventDefault();
-
-              var chatLink = "http://deadsimplechat.com/CodersCorner" + newUserID;
-              $("iframe").attr("src", chatLink);
-              $("#chatroom").removeClass("d-none");
-            })
           }
         })
 
@@ -146,7 +138,13 @@ $("#goBtn").on("click", function(event){
     $("#gif").append(gif3);
 
 })
+$(Document).on("click", ".joinButtons", function(event){
+  event.preventDefault();
 
+  var chatLink = "http://deadsimplechat.com/CodersCorner" + $(this).val();
+  $("iframe").attr("src", chatLink);
+  $("#chatroom").removeClass("d-none");
+})
 // ConnectionsRef refrences a specific location in our database.
 // All of our connections will be stored in this directory.
 var connectionsRef = database.ref("/connections");
