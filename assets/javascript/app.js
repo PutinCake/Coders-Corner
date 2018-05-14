@@ -103,7 +103,7 @@ $("#goBtn").on("click", function(event){
           }
       })
         
-      var chatLink = "http://deadsimplechat.com/CodersCorner" + currentID;
+      var chatLink = "https://deadsimplechat.com/CodersCorner" + currentID;
       $("iframe").attr("src", chatLink);
       $("#chatroom").removeClass("d-none");
     }  
@@ -130,7 +130,7 @@ $("#goBtn").on("click", function(event){
     $("#gif").empty();
     var gif1=$("<img width=100% class='mb-2'>").attr("src","https://media.giphy.com/media/13f7pejozPXuta/giphy.gif");
     var gif2=$("<img width=100% class='mb-2'>").attr("src","https://media.giphy.com/media/v9fIPO9pbpdjG/giphy.gif");
-    // var gif3=$("<img width=100% class='mb-2'>").attr("src","https://media.giphy.com/media/gJZS10CemXPRm/giphy.gif");
+    var gif3=$("<img width=100% class='mb-2'>").attr("src","https://media.giphy.com/media/gJZS10CemXPRm/giphy.gif");
     $("#gif").append(gif1);
     $("#gif").append(gif2);
     $("#gif").append(gif3);
@@ -139,7 +139,7 @@ $("#goBtn").on("click", function(event){
 $(document).on("click", ".joinButtons", function(event){
   event.preventDefault();
 
-  var chatLink = "http://deadsimplechat.com/CodersCorner" + $(this).val();
+  var chatLink = "https://deadsimplechat.com/CodersCorner" + $(this).val();
   $("iframe").attr("src", chatLink);
   $("#chatroom").removeClass("d-none");
 })
