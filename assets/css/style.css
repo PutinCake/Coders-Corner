@@ -1,6 +1,6 @@
 .container-fluid{
   /* background-image: url(../images/background.jpg); */
-  background-color: #fffef6;
+  background-color: #e4eddb;
   height: 100%;
 }
 
@@ -16,9 +16,21 @@
   font-weight: bold;
 }
 
+#logo-footer{
+  color: rgb(250, 184, 61);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 4vh;
+  font-weight: bold;
+}
+
 #beelogo{
   height: 7vh;
   width:7vh
+}
+
+#beelogo-footer{
+  height: 4vh;
+  width:4vh
 }
 
 .jumbotron{
@@ -29,12 +41,26 @@
   background-size: cover;
 }
 
+.card-title{
+  font-family: 'Rubik', sans-serif;
+  font-weight: bolder;
+}
+
+.btn{
+  font-family: 'Bree Serif', serif;
+}
+
+.button{
+  font-family: 'Skranji', cursive;
+}
+
 #card1{
   background-color:rgb(248, 246, 213);
   overflow: auto;
 }
 
 #card2{
+  height: 100%;
   width:100%;
   background-color:rgb(248, 246, 213);
   overflow: auto;
@@ -50,6 +76,10 @@
 #card3body{
   height: 100%;
   width: 100%;
+}
+
+.card-body{
+  background-color: #fff1c5;
 }
 
 .shadow-nohover {
@@ -82,9 +112,9 @@ iframe{
 }
 
 #status{
-    height: 100px;
-    width: 100%;
-
+  height: 100px;
+  width: 100%;
+  color: rgb(58, 52, 52);
 }
 
 /* animation circle */
@@ -167,7 +197,7 @@ h1.ml8 {
   /* line display efect */
   .ml1 {
     font-weight: 900;
-    font-size: 8vh;
+    font-size: 7.5vh;
     margin-top:0px;
   }
   
@@ -196,7 +226,164 @@ h1.ml8 {
     transform-origin: 0 0;
   }
   
+  .footer-distributed{
+    background-color: #343a40;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 25px 50px;
+    margin-top: 10px;
+  }
+  
+  .footer-left,
+  .footer-center,
+  .footer-right{
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  /* Footer left */
+  .footer-left{
+    width: 40%;
+  }
+
+  h3 span{
+    color:  #5383d3;
+  }
+  
+  /* Footer links */
+  .footer-links{
+    color:  #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+  }
+
+  .footer-links a{
+    display:inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .footer-company-name{
+    color:  #8f9296;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  /* Footer Center */
+  .footer-center{
+    width: 35%;
+  }
+  
+  .footer-center i{
+    background-color:  #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+  }
+  
+  .footer-center i.fa-envelope{
+    font-size: 17px;
+    line-height: 38px;
+  }
+  
+  .footer-center p{
+    display: inline-block;
+    color: #ffffff;
+    vertical-align: middle;
+    margin:0;
+  }
+  
+  .footer-center p span{
+    display:block;
+    font-weight: normal;
+    font-size:14px;
+    line-height:2;
+  }
+  
+  .footer-center p a{
+    color:  #5383d3;
+    text-decoration: none;;
+  }
+  
+  /* Footer Right */
+  .footer-right{
+    width: 20%;
+  }
+  
+  .footer-company-about{
+    line-height: 20px;
+    color:  #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  .footer-company-about span{
+    display: block;
+    color:  #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .footer-icons{
+    margin-top: 25px;
+  }
+  
+  .footer-icons a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color:  #33383b;
+    border-radius: 2px;
+  
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+  
+    margin-right: 3px;
+    margin-bottom: 5px;
+  }
+  
+
   .ml1 .line1 { top: 0; }
   .ml1 .line2 { bottom: 0; }
   /* end line effect  */
 
+  /* scrollbar */
+::-webkit-scrollbar-thumb:horizontal { 
+    width: 10px;
+    background-color: #CCCCCC;
+    -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color:#343a40;
+}
+
+::-webkit-scrollbar {
+    width: 13px; 
+}
+
+::-webkit-scrollbar-thumb:vertical { 
+    background-color:#4f7b86;
+}
+
+::-webkit-scrollbar-thumb:hover { 
+    height: 15px;
+    background-color: #4f7b86;
+    -webkit-border-radius: 4px;
+}
