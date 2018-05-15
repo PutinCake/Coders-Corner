@@ -1,7 +1,7 @@
 
-## Project one group 4 assignment:
+# Project one group 4 assignment:
 
-### Coders Corner 
+## Coders Corner 
 
 This is an application for people who would like to get help with their coding(software development)
 Skills.
@@ -12,7 +12,7 @@ Mentors get to see students names and the topics they have problems with.
 If the mentor is fimiliar with the topic then they can click a button which will take the mentor to a 
 private chatroom with the particular student.
 
-### Tools Used:
+## Tools Used:
 
 * Javascript
 * jQuery
@@ -22,7 +22,7 @@ private chatroom with the particular student.
 * AJAX calls for the above APIs
 
 
-### Why it is usefull:
+## Why it is usefull:
 
 1. Because Search services give you very general responses, it lacks with assisting you with specific 
    coding problems.
@@ -30,21 +30,29 @@ private chatroom with the particular student.
    solution to your coding problems.
 
 
-### How To Get Started:
+## How To Get Started:
 
 1. Type your name.
 2. Select I am student or I am mentor.
 ## Student
 a) Write the language/tool you are having problem with (tags)
+[Student Check In Gif](assets/images/StudentCheckIn.gif)
 b) Describe briefly the problem you are having.
 c) Click go button and you will be directed to a page where you could see possible solutions and
    helpful links.
+[Student Resources Chat Gif](assets/images/StudentResources.gif)
+d) Click Open Chat and wait for a mentor to join and assist you
+[Student Chat Gif](assets/images/StudentChat.gif)
 ## Mentor
 a) Click go button and you will be directed to a page where you see students and their issues.
-b) Click 'Join Chat' and your chat window will open in which you can chat with the student about their
+[Mentor Check In Gif](assets/images/MentorCheckIn.gif)
+b) Click 'Join Chat' and open your chat window in which you can assist the student with their
     problem.
+[Mentor Chat Gif](assets/images/MentorChat.gif)
 
 Upon closing the window, user information will be removed from the database and can be restarted upon page opening
+
+
 
 ### Maintain and contributed by:
 Mojib Mohammad  
