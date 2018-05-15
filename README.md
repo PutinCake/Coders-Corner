@@ -1,1 +1,64 @@
-# Coders-Corner
+
+## Project one group 4 assignment:
+
+### Coders Corner 
+
+This is an application for people who would like to get help with their coding(software development)
+Skills.
+A student can go to this application and check in to reach out to a mentor for help.
+Students will have some possible sulotions(links to good resources) to read while they wait for
+direct assistance from a mentor.
+Mentors get to see students names and the topics they have problems with. 
+If the mentor is fimiliar with the topic then they can click a button which will take the mentor to a 
+private chatroom with the particular student.
+
+### Tools Used:
+
+* Javascript
+* jQuery
+* MDN API
+* Mozilla API
+* Anime.js
+* AJAX calls for the above APIs
+
+
+### Why it is usefull:
+
+1. Because Search services give you very general responses, it lacks with assisting you with specific 
+   coding problems.
+2. Coders Corner solves that by giving both general results and peer to peer interaction to find a 
+   solution to your coding problems.
+
+
+### How To Get Started:
+
+1. Type your name.
+2. Select I am student or I am mentor.
+## Student
+a) Write the language/tool you are having problem with (tags)
+b) Describe briefly the problem you are having.
+c) Click go button and you will be directed to a page where you could see possible solutions and
+   helpful links.
+## Mentor
+a) Click go button and you will be directed to a page where you see students and their issues.
+b) Click 'Join Chat' and your chat window will open in which you can chat with the student about their
+    problem.
+
+Upon closing the window, user information will be removed from the database and can be restarted upon page opening
+
+### Maintain and contributed by:
+Mojib Mohammad  
+[cmd/ctr + click](mojib_monir@yahoo.com)
++1(510)359-2953
+
+Marlon Jovez
+[cmd/ctr + click](marlon_j_j@yahoo.com)
++1(510)725-1062
+
+Chunjin (William) Gao
+[cmd/ctr + click](seewilliam.gao@gmail.com)
++1(614)377-3853
+
+Zhiye (Eric) Mo 
+[cmd/ctr + click](zhiyemo09@gmail.com)
++1(520)301-7980
