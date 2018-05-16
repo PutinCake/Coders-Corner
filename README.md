@@ -22,7 +22,7 @@ private chatroom with the particular student.
 * AJAX calls for the above APIs
 
 
-## Why it is usefull:
+## Why it is useful:
 
 1. Because Search services give you very general responses, it lacks with assisting you with specific 
    coding problems.
@@ -54,7 +54,7 @@ Upon closing the window, user information will be removed from the database and 
 
 
 
-### Maintain and contributed by:
+### Maintained and contributed by:
 Mojib Mohammad  
 [cmd/ctr + click](mojib_monir@yahoo.com)
 +1(510)359-2953
